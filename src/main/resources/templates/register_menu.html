@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title th:text="#{menu.add}"></title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" th:href="@{/}" class="brand-logo" th:text="#{logo.name}"></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a th:href="@{/}" th:text="#{home}"></a></li>
+            <li><a href="#" th:text="#{menu.add}"></a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+            <li><a th:href="@{/}" th:text="#{home}"></a></li>
+            <li><a href="#" th:text="#{menu.add}"></a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="center" th:text="#{menu.add}"></h1>
+    <div class="row">
+        <form class="col s12" th:action="@{/create}" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="foodName" name="foodName" type="text" class="validate" required>
+                    <label for="foodName" th:text="#{food.name}"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="weight" name="weight" type="text" class="validate" required>
+                    <label for="weight" th:text="#{food.weight}"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="meal_time" name="mealtime" type="text" class="validate" required>
+                    <label for="meal_time" th:text="#{mealtime}"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="date" name="date" type="date" class="validate" required>
+                    <label for="date" th:text="#{date}"></label>
+                </div>
+            </div>
+            <div class="row center">
+                <button class="btn waves-effect waves-light orange" type="submit" th:text="#{menu.save}"></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer class="page-footer orange">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">About Us</h5>
+                <p class="grey-text text-lighten-4" th:text="#{footer}"></p>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2024 HealthyLife
+        </div>
+    </div>
+</footer>
+
+<!--  Scripts-->
+<script th:src="@{/js/jquery-2.1.1.min.js}"></script>
+<script th:src="@{/js/materialize.js}"></script>
+<script th:src="@{/js/init.js}"></script>
+
+</body>
+</html>

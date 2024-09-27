@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title th:text="#{settings}"></title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" th:href="@{/}" class="brand-logo" th:text="#{logo.name}"></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a th:href="@{/}" th:text="#{home}"></a></li>
+            <li><a th:href="@{/register_menu}" th:text="#{menu.add}"></a></li>
+            <li><a th:href="@{/register}" th:text="#{menu.diary}"></a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+            <li><a th:href="@{/}" th:text="#{home}"></a></li>
+            <li><a th:href="@{/register_menu}"th:text="#{menu.add}"></a></li>
+            <li><a th:href="@{/register}" th:text="#{menu.diary}"></a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="center" th:text="#{settings}"></h1>
+    <div class="row">
+        <form class="col s12" th:action="@{/save_settings}" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <div class="select-wrapper">
+                        <a name="profileSettings" th:href="@{/profile_settings}" class="select-dropdown" th:text="#{settings.profile}"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="language" name="language">
+                        <option value="ko">한국어</option>
+                        <option value="en">English</option>
+                        <option value="ja">日本語</option>
+                        <option value="zh-CN">简体中文</option>
+                        <option value="zh-TW">繁體中文</option>
+                    </select>
+                    <label for="language" th:text="#{language.settings}"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="theme" name="theme">
+                        <option value="light" th:text="#{mod.light}"></option>
+                        <option value="dark" th:text="#{mod.dark}"></option>
+                    </select>
+                    <label for="theme" th:text="#{theme.settings}"></label>
+                </div>
+            </div>
+            <div class="row center">
+                <button class="btn waves-effect waves-light orange" type="submit" th:text="#{settings.save}"></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer class="page-footer orange">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">About Us</h5>
+                <p class="grey-text text-lighten-4" th:text="#{footer}"></p>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2024 HealthyLife
+        </div>
+    </div>
+</footer>
+
+<!--  Scripts-->
+<script th:src="@{/js/jquery-2.1.1.min.js}"></script>
+<script th:src="@{/js/materialize.js}"></script>
+<script th:src="@{/js/init.js}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+    });
+</script>
+</body>
+</html>

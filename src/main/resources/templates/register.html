@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title th:text="#{register}"></title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" th:href="@{/}" class="brand-logo" th:text="#{logo.name}"></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a th:href="@{/login}" th:text="#{login}"></a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="center" th:text="#{register}"></h1>
+    <div class="row">
+        <form class="col s12" th:action="@{/login/register}" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="username" name="username" type="text" class="validate" required>
+                    <label for="username" th:text="#{username}"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" name="email" type="email" class="validate" required>
+                    <label for="email" th:text="#{email}"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" name="password" type="password" class="validate" required>
+                    <label for="password" th:text="#{password}"></label>
+                </div>
+            </div>
+            <div class="row center">
+                <button class="btn waves-effect waves-light orange" type="submit" th:text="#{register}"></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer class="page-footer orange">
+    <div class="container">
+        <h5 class="white-text">About Us</h5>
+        <p class="grey-text text-lighten-4" th:text="#{footer}"></p>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2024 HealthyLife
+        </div>
+    </div>
+</footer>
+
+<script th:src="@{/js/jquery-2.1.1.min.js}"></script>
+<script th:src="@{/js/materialize.js}"></script>
+<script th:src="@{/js/init.js}"></script>
+</body>
+</html>
