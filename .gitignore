@@ -1,7 +1,10 @@
 # 무시
-application.yml
-/gradle/
-.log
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+*.yml
 
 HELP.md
 .gradle
